@@ -1,4 +1,4 @@
-const menuButton = document.querySelector("#menuButton");
+﻿const menuButton = document.querySelector("#menuButton");
 const navLinks = document.querySelector("#navLinks");
 const form = document.querySelector("#contactForm");
 const formMessage = document.querySelector("#formMessage");
@@ -16,7 +16,7 @@ navLinks.addEventListener("click", (event) => {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  formMessage.textContent = "Gracias. Tu mensaje quedó listo para conectarse a correo o WhatsApp.";
+  formMessage.textContent = "Gracias. Tu mensaje quedÃ³ listo para conectarse a correo o WhatsApp.";
   form.reset();
 });
 
@@ -36,3 +36,25 @@ const revealObserver = new IntersectionObserver((entries) => {
 });
 
 revealItems.forEach((item) => revealObserver.observe(item));
+
+const pageSections = document.querySelectorAll("main section[id]");
+const sectionLinks = document.querySelectorAll(".nav-links a[href^='#']");
+
+const setActiveLink = (sectionId) => {
+  sectionLinks.forEach((link) => {
+    link.classList.toggle("is-active", link.getAttribute("href") === `#${sectionId}`);
+  });
+};
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      setActiveLink(entry.target.id);
+    }
+  });
+}, {
+  rootMargin: "-35% 0px -55% 0px",
+  threshold: 0
+});
+
+pageSections.forEach((section) => navObserver.observe(section));
