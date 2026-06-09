@@ -671,7 +671,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shado
   top: 50%;
   transform: translate(-50%, -50%);
   background-image: url("assets/logo-vertical-ad.png");
-  opacity: .10;
+  opacity: .20;
   filter: none;
   animation: none;
 }
@@ -843,16 +843,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shado
 
 .section-head > div::before,
 .section .split > div:first-child::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  width: min(260px, 62vw);
-  aspect-ratio: 1;
-  left: -54px;
-  top: -74px;
-  background: url("assets/logo-vertical-ad.png") center / contain no-repeat;
-  opacity: .045;
-  pointer-events: none;
+  display: none;
 }
 
 .section-head h2,
