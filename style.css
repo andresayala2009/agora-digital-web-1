@@ -671,7 +671,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shado
   top: 50%;
   transform: translate(-50%, -50%);
   background-image: url("assets/logo-vertical-ad.png");
-  opacity: .075;
+  opacity: .10;
   filter: none;
   animation: none;
 }
@@ -885,3 +885,5 @@ input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shado
     rgba(251, 252, 248, .94);
   box-shadow: 0 10px 28px rgba(17, 86, 111, .06);
 }
+
+
