@@ -800,3 +800,88 @@ input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shado
     padding: 74px 0 48px;
   }
 }
+
+/* Imagenes de programas */
+.program-image {
+  width: 100%;
+  height: 190px;
+  margin: -6px 0 22px;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 14px 30px rgba(17, 86, 111, .12);
+  transition: transform .28s ease, box-shadow .28s ease, filter .28s ease;
+}
+
+.program-card:hover .program-image {
+  transform: scale(1.025);
+  box-shadow: 0 22px 46px rgba(17, 86, 111, .2);
+  filter: saturate(1.08) contrast(1.03);
+}
+
+.program-card .number {
+  margin-top: 0;
+}
+
+@media (max-width: 640px) {
+  .program-image {
+    height: 165px;
+  }
+}
+
+/* Programas sin emojis */
+.program-card h3 {
+  margin-top: 0;
+}
+
+/* Logo desvanecido detras de titulos de seccion */
+.section-head > div,
+.section .split > div:first-child {
+  position: relative;
+  isolation: isolate;
+}
+
+.section-head > div::before,
+.section .split > div:first-child::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: min(260px, 62vw);
+  aspect-ratio: 1;
+  left: -54px;
+  top: -74px;
+  background: url("assets/logo-vertical-ad.png") center / contain no-repeat;
+  opacity: .045;
+  pointer-events: none;
+}
+
+.section-head h2,
+.section .split h2,
+.section-head .eyebrow,
+.section .split .eyebrow {
+  position: relative;
+  z-index: 1;
+}
+
+.dark .section-head > div::before {
+  opacity: .11;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 640px) {
+  .section-head > div::before,
+  .section .split > div:first-child::before {
+    width: min(220px, 74vw);
+    left: -34px;
+    top: -58px;
+    opacity: .04;
+  }
+}
+
+/* Desvanecido suave en barra superior */
+.site-header {
+  background:
+    linear-gradient(90deg, rgba(144, 206, 197, .22), rgba(251, 252, 248, .96) 34%, rgba(251, 252, 248, .96) 68%, rgba(133, 192, 109, .18)),
+    rgba(251, 252, 248, .94);
+  box-shadow: 0 10px 28px rgba(17, 86, 111, .06);
+}
