@@ -621,6 +621,104 @@ input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shado
   .footer-bottom { flex-direction: column; }
 }
 
+  /* Borrador visual: ajustes generales */
+  .site-header {
+    box-shadow: 0 10px 28px rgba(17, 86, 111, .08);
+  }
+
+  .nav-links a:not(.button) {
+    border-bottom: 0;
+    position: relative;
+    padding: 6px 0;
+  }
+
+  .nav-links a:not(.button)::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .22s ease;
+  }
+
+  .nav-links a:not(.button):hover::after,
+  .nav-links a:not(.button).is-active::after {
+    transform: scaleX(1);
+  }
+
+  .button {
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+
+  .button-light:hover {
+    background: #f6fbfa;
+  }
+
+  .button-yellow:hover {
+    background: #3e9c2f;
+  }
+
+  .hero {
+    min-height: calc(100vh - 76px);
+    display: grid;
+    align-items: center;
+    padding: 90px 0 60px;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(58, 184, 183, .16), transparent 24%),
+      radial-gradient(circle at 88% 70%, rgba(133, 192, 109, .14), transparent 34%),
+      linear-gradient(180deg, #f8fbfb 0%, #eef6f3 100%);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, .92fr);
+    gap: 40px;
+    align-items: center;
+  }
+
+  .hero-grid > div:first-child {
+    padding: 20px 0;
+  }
+
+  .hero-card {
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(255,255,255,.98), #f7fbfb);
+    box-shadow: 0 24px 64px rgba(17, 86, 111, .11);
+  }
+
+  .hero-note {
+    left: 24px;
+    right: auto;
+    bottom: 38px;
+    width: min(320px, 70%);
+    border-radius: 18px;
+  }
+
+  .section + .section {
+    padding-top: 120px;
+  }
+
+  .section-head {
+    flex-wrap: wrap;
+  }
+
+  .stats div {
+    background: #fff;
+  }
+
+  .card,
+  .resource,
+  .training,
+  .form {
+    border-radius: 20px;
+  }
+
 /* Ajustes solicitados */
 .nav-links a:not(.button) {
   position: relative;
