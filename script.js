@@ -39,6 +39,7 @@ revealItems.forEach((item) => revealObserver.observe(item));
 
 const pageSections = document.querySelectorAll("main section[id]");
 const sectionLinks = document.querySelectorAll(".nav-links a[href^='#']");
+const scrollTopButton = document.querySelector("#scrollTopButton");
 
 const setActiveLink = (sectionId) => {
   sectionLinks.forEach((link) => {
@@ -58,3 +59,14 @@ const navObserver = new IntersectionObserver((entries) => {
 });
 
 pageSections.forEach((section) => navObserver.observe(section));
+
+window.addEventListener("scroll", () => {
+  if (!scrollTopButton) return;
+  scrollTopButton.classList.toggle("visible", window.scrollY > 300);
+});
+
+if (scrollTopButton) {
+  scrollTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
