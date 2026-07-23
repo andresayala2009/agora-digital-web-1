@@ -1556,3 +1556,93 @@ h2 {
     width: calc(100% - 24px) !important;
   }
 }
+
+
+/* ============================================
+   TIPOGRAFÍA UNIFICADA Y LIMPIA
+   ============================================ */
+
+/* Todos los títulos de sección (h2) iguales */
+h2 {
+  font-size: clamp(30px, 4.5vw, 46px) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+}
+
+/* Todos los subtítulos pequeños (.eyebrow) iguales */
+.eyebrow {
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+}
+
+/* Todos los títulos de tarjetas (h3) iguales */
+h3 {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+}
+
+/* Párrafos de introducción (.lead) */
+.lead {
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+}
+
+/* Textos normales dentro de tarjetas */
+.card p,
+.program-card p,
+.training p,
+.resource p,
+.flip-back p,
+.values span,
+.contact-list span {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* Subtítulo de sección (Valores) */
+.section-subtitle {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+}
+
+
+/* ============================================
+   SUBTÍTULOS CENTRADOS
+   ============================================ */
+
+.programs-subtitle {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  margin-bottom: 22px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* ← esto lo centra */
+  gap: 10px;
+  text-align: center;
+}
+
+.programs-subtitle.risks {
+  color: #9f2525;
+}
+
+.programs-subtitle.solutions {
+  color: #2f7f27;
+}
+
+.programs-subtitle::before {
+  content: "";
+  width: 18px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.programs-subtitle.risks::before {
+  background: #9f2525;
+}
+
+.programs-subtitle.solutions::before {
+  background: #2f7f27;
+}
